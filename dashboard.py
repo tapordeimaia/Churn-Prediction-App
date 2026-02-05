@@ -5,7 +5,7 @@ import numpy as np
 from tensorflow.keras.models import load_model
 
 # 1. Load the model and the scaler
-model = load_model('churn_model.keras')
+model = load_model('churn_model.h5')
 scaler = joblib.load('scaler.pkl')
 
 # 2. Title and Description

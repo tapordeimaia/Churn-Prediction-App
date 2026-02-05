@@ -107,7 +107,7 @@ import joblib
 joblib.dump(scaler, 'scaler.pkl')
 
 # 2. Save the model
-model.save('churn_model.keras')
+model.save('churn_model.h5')
 
 print("\nModel and Scaler saved successfully!")
 
