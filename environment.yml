@@ -1,13 +1,13 @@
 name: churn-env
 channels:
+  - conda-forge
   - defaults
 dependencies:
   - python=3.10
   - pip
+  - tensorflow 
   - pip:
-    - streamlit==1.32.0
-    - tensorflow==2.15.0
-    - protobuf==3.20.3
+    - streamlit
     - pandas
     - numpy
     - scikit-learn
