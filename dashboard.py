@@ -3,9 +3,26 @@ import joblib
 import pandas as pd
 import numpy as np
 from tensorflow.keras.models import load_model
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense
 
 # 1. Load the model and the scaler
-model = load_model('churn_model.h5')
+# --- RECONSTRUCT THE MODEL ---
+# We build the same structure as in main.py
+def create_model():
+    model = Sequential([
+        Dense(32, activation='relu', input_shape=(45,)),
+        Dense(16, activation='relu'),
+        Dense(1, activation='sigmoid')
+    ])
+    # We don't need to compile it for prediction, just build it
+    return model
+
+# 1. Create the empty brain
+model = create_model()
+
+# 2. Load the memory (weights)
+model.load_weights('model_weights.weights.h5')
 scaler = joblib.load('scaler.pkl')
 
 # 2. Title and Description

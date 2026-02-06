@@ -107,7 +107,8 @@ import joblib
 joblib.dump(scaler, 'scaler.pkl')
 
 # 2. Save the model
-model.save('churn_model.h5')
+model.save_weights('model_weights.weights.h5')
+print("Weights saved successfully!")
 
 print("\nModel and Scaler saved successfully!")
 
